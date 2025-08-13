@@ -1,287 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Git Commands Cheat Sheet (Sample Page)</title>
-  <meta name="description" content="A simple, accessible HTML5 page demonstrating layout, styles, and basic interactivity." />
+  <meta charset="utf-8">
+  <title>Git Commands Cheat Sheet</title>
   <style>
-    :root {
-      --bg: #ffffff;
-      --fg: #0f172a;
-      --muted: #475569;
-      --card: #f8fafc;
-      --accent: #2563eb;
-      --border: #e2e8f0;
-    }
-    [data-theme="dark"] {
-      --bg: #0b1020;
-      --fg: #e5e7eb;
-      --muted: #a3b0c2;
-      --card: #111831;
-      --accent: #60a5fa;
-      --border: #23324a;
-    }
-
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-      background: var(--bg);
-      color: var(--fg);
-      line-height: 1.55;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: saturate(180%) blur(8px);
-      background: color-mix(in srgb, var(--bg) 75%, transparent);
-      border-bottom: 1px solid var(--border);
-    }
-    .wrap { max-width: 1100px; margin: 0 auto; padding: 1rem; }
-    .row { display: flex; align-items: center; gap: 1rem; justify-content: space-between; }
-
-    .brand {
-      display: flex; align-items: center; gap: .6rem; font-weight: 700;
-    }
-    .brand .logo {
-      width: 28px; height: 28px; display: grid; place-items: center;
-      border-radius: 8px; background: var(--accent); color: white; font-size: .9rem;
-    }
-
-    .controls { display: flex; gap: .5rem; align-items: center; }
-    button, input[type="search"] {
-      font: inherit;
-      border: 1px solid var(--border);
-      background: var(--card);
-      color: var(--fg);
-      padding: .55rem .75rem;
-      border-radius: .6rem;
-    }
-    button {
-      cursor: pointer;
-    }
-    button:hover { border-color: var(--accent); }
-
-    main .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 1rem;
-      padding: 1rem;
-      margin-top: 1rem;
-    }
-    h1 { font-size: clamp(1.25rem, 1.2rem + 1.25vw, 2rem); margin: .2rem 0 .6rem; }
-    p.muted { color: var(--muted); margin: 0 0 .6rem; }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: .5rem;
-      font-size: 0.95rem;
-    }
-    th, td {
-      border-bottom: 1px solid var(--border);
-      text-align: left;
-      padding: .7rem .6rem;
-      vertical-align: top;
-    }
-    th { font-weight: 700; }
-    code {
-      background: color-mix(in srgb, var(--card) 70%, #0000);
-      border: 1px solid var(--border);
-      padding: .15rem .35rem;
-      border-radius: .4rem;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 0.92em;
-    }
-
-    details {
-      border: 1px dashed var(--border);
-      padding: .75rem 1rem;
-      border-radius: .75rem;
-      background: color-mix(in srgb, var(--card) 85%, #0000);
-      margin-top: 1rem;
-    }
-    summary { cursor: pointer; font-weight: 600; }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem 3rem;
-      color: var(--muted);
-    }
-
-    /* Responsive tweak */
-    @media (max-width: 640px) {
-      .row { flex-direction: column; align-items: stretch; }
-      .controls { justify-content: space-between; }
-    }
+    body { background: #fff; font-family: Arial, sans-serif; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap row" role="banner">
-      <div class="brand" aria-label="Site title">
-        <div class="logo" aria-hidden="true">G</div>
-        <span>Git Cheatsheet</span>
-      </div>
-      <div class="controls">
-        <label for="search" class="visually-hidden">Search commands</label>
-        <input id="search" type="search" placeholder="Filter commands (e.g., log, merge)" aria-label="Filter commands" />
-        <button id="toggleTheme" type="button" aria-pressed="false" aria-label="Toggle dark mode">Toggle theme</button>
-      </div>
-    </div>
-  </header>
+  <h1>Common Git Commands<h1> <!-- ❌ Missing slash in closing tag -->
 
-  <main class="wrap" id="main-content">
-    <section class="card" aria-labelledby="title">
-      <h1 id="title">Common Git Commands</h1>
-      <p class="muted">A minimal, accessible example page with table, details, and a little JavaScript for filtering.</p>
+  <input id="search" placeholder="Search command" /> <!-- ❌ Missing type="search" for intended functionality -->
 
-      <table id="cmdTable">
-        <thead>
-          <tr>
-            <th scope="col">Command</th>
-            <th scope="col">Description</th>
-            <th scope="col">Example</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>git init</code></td>
-            <td>Initialize a repository in the current folder.</td>
-            <td><code>git init</code></td>
-          </tr>
-          <tr>
-            <td><code>git clone</code></td>
-            <td>Copy a remote repository to your machine.</td>
-            <td><code>git clone https://example.com/repo.git</code></td>
-          </tr>
-          <tr>
-            <td><code>git add</code></td>
-            <td>Stage changes for the next commit.</td>
-            <td><code>git add .</code></td>
-          </tr>
-          <tr>
-            <td><code>git commit -m</code></td>
-            <td>Create a snapshot of staged changes.</td>
-            <td><code>git commit -m "feat: add login"</code></td>
-          </tr>
-          <tr>
-            <td><code>git status</code></td>
-            <td>Show modified/staged files and current branch.</td>
-            <td><code>git status</code></td>
-          </tr>
-          <tr>
-            <td><code>git log</code></td>
-            <td>View commit history (use <code>--oneline --graph --all</code> for a compact graph).</td>
-            <td><code>git log --oneline --graph --all</code></td>
-          </tr>
-          <tr>
-            <td><code>git diff</code></td>
-            <td>Show line-by-line changes before committing.</td>
-            <td><code>git diff</code></td>
-          </tr>
-          <tr>
-            <td><code>git branch</code></td>
-            <td>List/create/delete branches.</td>
-            <td><code>git branch feature/login</code></td>
-          </tr>
-          <tr>
-            <td><code>git switch</code></td>
-            <td>Switch to another branch.</td>
-            <td><code>git switch feature/login</code></td>
-          </tr>
-          <tr>
-            <td><code>git merge</code></td>
-            <td>Combine changes from another branch.</td>
-            <td><code>git merge feature/login</code></td>
-          </tr>
-          <tr>
-            <td><code>git push</code></td>
-            <td>Upload local commits to the remote.</td>
-            <td><code>git push origin main</code></td>
-          </tr>
-          <tr>
-            <td><code>git pull</code></td>
-            <td>Fetch and merge remote changes.</td>
-            <td><code>git pull origin main</code></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <details>
-        <summary>Tips</summary>
-        <ul>
-          <li>Use <code>git log --oneline</code> to quickly list commits.</li>
-          <li>Create descriptive branch names, e.g., <code>feature/payment-api</code>.</li>
-          <li>Write clear commit messages (imperative mood, short subject, optional body).</li>
-        </ul>
-      </details>
-    </section>
-  </main>
-
-  <footer>
-    <small>&copy; <span id="year"></span> Sample Page. Built with plain HTML, CSS, and JS.</small>
-  </footer>
+  <table id="cmdTable">
+    <thead>
+      <tr>
+        <th>Command</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>git init</code></td>
+        <td>Initialize repository</td>
+        <td><code>git init</td> <!-- ❌ Missing closing </code> -->
+      </tr>
+      <tr>
+        <td><code>git clone</td> <!-- ❌ Missing closing </code> -->
+        <td>Clone repo</td>
+        <td><code>git clone https://example.com/repo.git</code>
+      </tr>
+    </tbody>
+  </table>
 
   <script>
-    // Helper: prefers-color-scheme
-    (function initTheme() {
-      var saved = localStorage.getItem("theme");
-      var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-      var theme = saved || (prefersDark ? "dark" : "light");
-      document.documentElement.setAttribute("data-theme", theme);
-      var btn = document.getElementById("toggleTheme");
-      if (btn) btn.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
-    })();
+    const input = document.getElementById('search');
+    const rows = document.querySelectorAll('#cmdTable tbody tr');
 
-    // Toggle theme button
-    (function bindThemeToggle(){
-      var btn = document.getElementById("toggleTheme");
-      if (!btn) return;
-      btn.addEventListener("click", function(){
-        var current = document.documentElement.getAttribute("data-theme") || "light";
-        var next = current === "light" ? "dark" : "light";
-        document.documentElement.setAttribute("data-theme", next);
-        localStorage.setItem("theme", next);
-        btn.setAttribute("aria-pressed", next === "dark" ? "true" : "false");
-      });
-    })();
-
-    // Filter table rows by search term
-    (function bindFilter(){
-      var input = document.getElementById("search");
-      var table = document.getElementById("cmdTable");
-      if (!input || !table) return;
-
-      input.addEventListener("input", function(){
-        var q = input.value.trim().toLowerCase();
-        var rows = table.tBodies[0].rows;
-        for (var i = 0; i < rows.length; i++) {
-          var text = rows[i].innerText.toLowerCase();
-          rows[i].style.display = text.indexOf(q) !== -1 ? "" : "none";
+    // ❌ Bug 1: Typo in variable name 'inpt' instead of 'input'
+    inpt.addEventListener('input', () => {
+      const q = input.value.toLowerCase();
+      rows.forEach(row => {
+        // ❌ Bug 2: Using 'innertext' instead of 'innerText' (case-sensitive)
+        if (row.innertext.includes(q)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
         }
       });
-    })();
+    });
 
-    // Footer year
-    (function setYear(){
-      var el = document.getElementById("year");
-      if (el) el.textContent = new Date().getFullYear();
-    })();
+    // ❌ Bug 3: Missing closing curly brace for script block
   </script>
-
-  <!-- Accessible helper for screen readers -->
-  <style>
-    .visually-hidden {
-      position: absolute !important;
-      height: 1px; width: 1px;
-      overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
-      white-space: nowrap; border: 0; padding: 0; margin: -1px;
-    }
-  </style>
 </body>
 </html>
