@@ -72,7 +72,7 @@ app.patch("/users/:id", async (req, res) => {
 app.get("/users", async (req, res) => {
   const users = await User.find().select("-password");
   res.json({
-    message: "ITMC{Well done! 🙄}. Now delete your user with the endpoint ended with your 6 random characters.",
+    message: "ITMC{Well done! 🙄}. Now delete your user with the endpoint ended with your id.",
     users,
   });
 });
