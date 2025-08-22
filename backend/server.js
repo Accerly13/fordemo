@@ -30,7 +30,7 @@ function shuffleString(str) {
 }
 
 app.get("/", (req, res) => {
-  res.send("This URL is for backend setup only. Create new data with the parameter username (your surname) and a password with /users as an endpoint to get the answer in number 1. The answer format is ITMC{answer}.");
+  res.send("This URL is for backend setup only. Create new data with the parameter username (your surname) and a password (not real password) with /users as an endpoint to get the answer in number 1. The answer format is ITMC{answer}.");
 });
 
 app.post("/users", async (req, res) => {
